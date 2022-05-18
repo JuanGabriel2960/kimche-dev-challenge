@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./normalize.css";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
