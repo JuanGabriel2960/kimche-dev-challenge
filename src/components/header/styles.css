@@ -1,0 +1,3 @@
+.header{
+    @apply bg-primary-blue py-20 md:py-24;
+}
