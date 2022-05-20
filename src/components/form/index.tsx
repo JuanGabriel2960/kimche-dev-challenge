@@ -8,13 +8,13 @@ const searchIcon = require("../../assets/search-icon.png")
 
 export const Form = () => {
 
-  const { groupBy, setGroupBy } = useContext(CountryContext)
+  const { groupBy, searchParameter, setGroupBy, setSearchParameter } = useContext(CountryContext)
 
   return (
     <Container>
       <div className='input-container'>
         <img src={searchIcon} alt='search icon' />
-        <input className='input' type="text" id="country" name="country" autoComplete='off' placeholder='Search...' />
+        <input className='input' type="text" id="country" name="country" autoComplete='off' placeholder='Search...' onChange={e => setSearchParameter(e.target.value)} value={searchParameter} />
       </div>
       <div className='group-by-container'>
         <h4 className='text-2xl md:text-3xl font-bold text-gray-400'>Group By</h4>

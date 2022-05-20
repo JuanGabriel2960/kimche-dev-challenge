@@ -7,12 +7,15 @@ import GET_DATA from '../graphql/queries'
 type CountryContextProps = {
     data: Data | null;
     groupBy: GroupBy;
+    searchParameter: string;
     setGroupBy: (groupBy: GroupBy) => void;
+    setSearchParameter: (searchParameter: string) => void;
 }
 
 const countryInitialState: CountryState = {
     data: null,
     groupBy: GroupBy.continents,
+    searchParameter: '',
 }
 
 export const CountryContext = createContext({} as CountryContextProps)
@@ -46,10 +49,20 @@ export const CountryProvider = ({ children }: any) => {
         })
     };
 
+    const setSearchParameter = (searchParameter: string) => {
+        dispatch({
+            type: 'setSearchParameter',
+            payload: {
+                searchParameter
+            }
+        })
+    };
+
     return (
         <CountryContext.Provider value={{
             ...state,
-            setGroupBy
+            setGroupBy,
+            setSearchParameter
         }}>
             {children}
         </CountryContext.Provider>
