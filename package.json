@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.6.4",
     "@apollo/react-hooks": "^3.1.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -12,7 +13,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "apollo-boost": "^0.4.9",
-    "graphql": "^15.1.0",
+    "graphql": "^16.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "5.0.0",
@@ -42,6 +43,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.13",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }

@@ -1,0 +1,15 @@
+.input-container {
+    @apply flex items-center w-full bg-white py-5 px-4 md:py-7 md:px-6 rounded-md shadow-lg -translate-y-10 md:-translate-y-12;
+}
+
+.input {
+    @apply bg-transparent w-full ml-4 text-2xl;
+}
+
+.button-container{
+    @apply flex items-center gap-4 md:gap-8;
+}
+
+.group-by-container{
+    @apply flex items-center justify-between mb-8;
+}
