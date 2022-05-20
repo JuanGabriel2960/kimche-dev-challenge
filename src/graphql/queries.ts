@@ -16,7 +16,9 @@ query{
       name
     }
     emoji
-    emojiU
+    states{
+      name
+    }
   }
   languages {
 		name

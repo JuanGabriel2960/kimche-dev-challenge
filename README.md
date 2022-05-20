@@ -1,7 +1,7 @@
 # Desafío para Software Engineers
 
-Nombre postulante: [TU NOMBRE]
-Link a la app en producción: [LINK DEL DEPLOY]
+Nombre postulante: Juan Gabriel Tavárez López
+Link a la app en producción: https://kimche-dev-challenge-jt.herokuapp.com
 
 ## Instrucciones
 
@@ -37,3 +37,7 @@ Acá van algunas cosas que pueden ser útiles (o no 👀):
 - [Eslint](https://eslint.org/)
 - [Eslint airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 - [Husky](https://www.npmjs.com/package/husky)
+
+## Respuesta a la pregunta
+
+Debido a mi experiencia profesional desarrollando software los cuales manejan un gran volumen de datos (millones), en mi trabajo solemos optar por el servicio de Elastic Search, el cual es un motor de busqueda que nos facilita la escabilidad y la velocidad a la hora de consultar datos. Sin la necesidad de tener que cambiar la estructura propia de la DB. Tuve la oportunidad de utilizarlo en varios proyectos del área de la salud, donde se nos pedian optimizar la busqueda de datos entre millones de vacunas aplicadas a nivel nacional.

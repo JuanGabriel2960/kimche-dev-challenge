@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Container } from '../container'
 import { Group } from '../group';
 import { CountryContext } from '../../context/CountryContext';
+import { Loading } from '../loading';
 
 export const Results = () => {
 
@@ -25,7 +26,7 @@ export const Results = () => {
             {
                 (!data)
                     ? (
-                        <span>Loading...</span>
+                        <Loading />
                     ) : (
                         data[groupBy].map(({ name, code }) => (
                             <Group key={code} title={name} countries={groupCountries(name)} />

@@ -10,7 +10,7 @@ interface Props {
 
 export const Group = ({ title, countries }: Props) => {
 
-    const { data } = useContext(CountryContext)
+    const { data, openCountryDetails } = useContext(CountryContext)
 
     return (
         <div className={`mb-10 ${countries?.length === 0 && 'hidden'}`}>
@@ -18,7 +18,7 @@ export const Group = ({ title, countries }: Props) => {
             <div className='flex flex-wrap gap-24 justify-center md:justify-start'>
                 {
                     countries?.map((country) => (
-                        <Card key={country.code} country={country} />
+                        <Card key={country.code} country={country} onClick={() => openCountryDetails(country)} />
                     ))
                 }
             </div>
