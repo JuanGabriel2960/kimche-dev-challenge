@@ -5,3 +5,11 @@
 .input {
     @apply bg-transparent w-full ml-4 text-2xl;
 }
+
+.button-container{
+    @apply flex items-center gap-4;
+}
+
+.group-by-container{
+    @apply flex items-center justify-between;
+}

@@ -1,17 +1,18 @@
 import React, { createContext, useEffect, useReducer } from "react";
-import { Data } from "../interfaces";
+import { Data, GroupBy } from "../interfaces";
 import { countryReducer, CountryState } from './CountryReducer';
 import { useQuery } from '@apollo/client';
 import GET_DATA from '../graphql/queries'
 
 type CountryContextProps = {
     data: Data | null;
-    groupBy: 'continent' | 'language';
+    groupBy: GroupBy;
+    // removeCustomer: () => void;
 }
 
 const countryInitialState: CountryState = {
     data: null,
-    groupBy: 'continent',
+    groupBy: GroupBy.continents,
 }
 
 export const CountryContext = createContext({} as CountryContextProps)

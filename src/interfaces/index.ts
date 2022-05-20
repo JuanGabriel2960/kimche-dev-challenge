@@ -25,3 +25,8 @@ export interface Country {
 export interface CountryContinent {
     name: string;
 }
+
+export enum GroupBy {
+    continents = "continents",
+    languages = "languages",
+}

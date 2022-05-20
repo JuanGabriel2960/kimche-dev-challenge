@@ -5,7 +5,20 @@ import { CountryContext } from '../../context/CountryContext';
 
 export const Results = () => {
 
-    const { data } = useContext(CountryContext)
+    const { data, groupBy } = useContext(CountryContext)
+
+    const groupCountries = (title: string) => {
+        switch (groupBy) {
+            case 'continents':
+                return data?.countries.filter(({ continent }) => continent.name === title)
+
+            case 'languages':
+                return data?.countries.filter(({ languages }) => languages.find(({ name }) => name === title))
+
+            default:
+                break;
+        }
+    }
 
     return (
         <Container>
@@ -14,8 +27,8 @@ export const Results = () => {
                     ? (
                         <span>Loading...</span>
                     ) : (
-                        data.languages.map((a: any) => (
-                            <Group key={a.name} title={a.name} />
+                        data[groupBy].map(({ name, code }) => (
+                            <Group key={code} title={name} countries={groupCountries(name)} />
                         ))
                     )
             }

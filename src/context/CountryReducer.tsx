@@ -1,12 +1,13 @@
-import { Data } from "../interfaces";
+import { Data, GroupBy } from "../interfaces";
 
 export interface CountryState {
     data: Data | null;
-    groupBy: 'continent' | 'language';
+    groupBy: GroupBy;
 }
 
 type CountryAction =
     | { type: 'setData', payload: { data: Data } }
+    | { type: 'setGroupBy', payload: { groupBy: GroupBy } }
 
 export const countryReducer = (state: CountryState, action: CountryAction): CountryState => {
     switch (action.type) {
