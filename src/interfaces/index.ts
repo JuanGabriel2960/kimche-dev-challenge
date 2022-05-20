@@ -1,10 +1,10 @@
 export interface Data {
     countries: Country[];
-    languages: Element[];
-    continents: Element[];
+    languages: ContinentElement[];
+    continents: ContinentElement[];
 }
 
-export interface Element {
+export interface ContinentElement {
     name: string;
     code: string;
 }
@@ -12,19 +12,19 @@ export interface Element {
 export interface Country {
     code: string;
     name: string;
-    native: string;
     phone: string;
-    continent: CountryContinent;
+    continent: StateClass;
     capital: null | string;
     currency: null | string;
-    languages: CountryContinent[];
+    languages: StateClass[];
     emoji: string;
-    emojiU: string;
+    states: StateClass[];
 }
 
-export interface CountryContinent {
+export interface StateClass {
     name: string;
 }
+
 
 export enum GroupBy {
     continents = "continents",

@@ -8,11 +8,12 @@ const moneyIcon = require('../../assets/money-icon.png')
 
 interface Props {
     country: Country;
+    onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export const Card = ({ country }: Props) => {
+export const Card = ({ country, onClick }: Props) => {
     return (
-        <div className='card'>
+        <div className='card' onClick={onClick}>
             <img className='rounded-md img' src={`https://flagcdn.com/w320/${country.code.toLowerCase()}.png`} />
             <h3 className='text-3xl font-bold border-b border-gray-400 pb-3 my-3 whitespace-nowrap text-ellipsis overflow-hidden'>{country.name}</h3>
             <div className='h-40 flex flex-col justify-evenly'>
