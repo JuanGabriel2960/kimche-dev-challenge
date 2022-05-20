@@ -5,15 +5,15 @@ import { CountryContext } from '../../context/CountryContext';
 
 export const Results = () => {
 
-    const { data, groupBy } = useContext(CountryContext)
+    const { data, groupBy, searchParameter } = useContext(CountryContext)
 
     const groupCountries = (title: string) => {
         switch (groupBy) {
             case 'continents':
-                return data?.countries.filter(({ continent }) => continent.name === title)
+                return data?.countries.filter(({ continent, name }) => continent.name === title && name.match(new RegExp(searchParameter, "i")))
 
             case 'languages':
-                return data?.countries.filter(({ languages }) => languages.find(({ name }) => name === title))
+                return data?.countries.filter(({ languages, name }) => languages.find(({ name }) => name === title) && name.match(new RegExp(searchParameter, "i")))
 
             default:
                 break;
