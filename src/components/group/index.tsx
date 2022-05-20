@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { CountryContext } from '../../context/CountryContext';
 import { Country } from '../../interfaces/index';
+import { Card } from '../card';
 
 interface Props {
     title: string;
@@ -12,12 +13,12 @@ export const Group = ({ title, countries }: Props) => {
     const { data } = useContext(CountryContext)
 
     return (
-        <div>
-            <h3>{title}</h3>
-            <div>
+        <div className='mb-10'>
+            <h3 className='text-4xl md:text-5xl font-bold mb-5'>{title}</h3>
+            <div className='flex flex-wrap gap-24 justify-center md:justify-start'>
                 {
-                    countries?.map(({ name, capital, code }) => (
-                        <li key={code}>{name}</li>
+                    countries?.map((country) => (
+                        <Card key={country.code} country={country} />
                     ))
                 }
             </div>
