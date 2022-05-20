@@ -6,22 +6,22 @@ import { Container } from '../container'
 import './styles.css'
 const searchIcon = require("../../assets/search-icon.png")
 
-export const Input = () => {
+export const Form = () => {
 
-  const { groupBy } = useContext(CountryContext)
+  const { groupBy, setGroupBy } = useContext(CountryContext)
 
   return (
     <Container>
       <div className='input-container'>
         <img src={searchIcon} alt='search icon' />
-        <input className='input' type="text" id="country" name="country" placeholder='Search...' />
+        <input className='input' type="text" id="country" name="country" autoComplete='off' placeholder='Search...' />
       </div>
       <div className='group-by-container'>
-        <h4>Group By</h4>
+        <h4 className='text-2xl md:text-3xl font-bold text-gray-400'>Group By</h4>
         <div className='button-container'>
           {
             groupByOptions.map((option) => (
-              <Button key={option} text={option} active={groupBy === option} />
+              <Button key={option} text={option} onClick={() => setGroupBy(option)} active={groupBy === option} />
             ))
           }
         </div>

@@ -7,7 +7,7 @@ import GET_DATA from '../graphql/queries'
 type CountryContextProps = {
     data: Data | null;
     groupBy: GroupBy;
-    // removeCustomer: () => void;
+    setGroupBy: (groupBy: GroupBy) => void;
 }
 
 const countryInitialState: CountryState = {
@@ -37,9 +37,19 @@ export const CountryProvider = ({ children }: any) => {
         })
     }
 
+    const setGroupBy = (groupBy: GroupBy) => {
+        dispatch({
+            type: 'setGroupBy',
+            payload: {
+                groupBy
+            }
+        })
+    };
+
     return (
         <CountryContext.Provider value={{
             ...state,
+            setGroupBy
         }}>
             {children}
         </CountryContext.Provider>

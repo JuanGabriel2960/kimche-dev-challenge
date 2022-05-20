@@ -7,9 +7,9 @@
 }
 
 .button-container{
-    @apply flex items-center gap-4;
+    @apply flex items-center gap-4 md:gap-8;
 }
 
 .group-by-container{
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between mb-8;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { CountryProvider } from './context/CountryContext';
 import { Header } from "./components/header";
-import { Input } from "./components/input";
+import { Form } from "./components/form";
 import { Results } from "./components/results";
 import "./normalize.css";
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <CountryProvider>
       <Header />
-      <Input />
+      <Form />
       <Results />
     </CountryProvider>
   )

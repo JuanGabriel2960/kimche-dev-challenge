@@ -17,6 +17,12 @@ export const countryReducer = (state: CountryState, action: CountryAction): Coun
                 data: action.payload.data,
             }
 
+        case 'setGroupBy':
+            return {
+                ...state,
+                groupBy: action.payload.groupBy,
+            }
+
         default:
             return state;
     }
